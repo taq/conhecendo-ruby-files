@@ -3,7 +3,7 @@ include Memoize
 
 def fib(numero)
   return numero if numero < 2
-  fib(numero-1)+fib(numero-2)
+  fib(numero - 1) + fib(numero - 2)
 end
 memoize(:fib)
 
