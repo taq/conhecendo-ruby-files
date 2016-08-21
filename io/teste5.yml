@@ -1,0 +1,21 @@
+---
+development:
+    adapter: mysql
+    database: teste_development
+    username: root
+    password: test
+    host: localhost
+
+test:
+    adapter: mysql
+    database: teste_test
+    username: root
+    password: test
+    host: localhost
+
+production:
+    adapter: mysql
+    database: teste_production
+    username: root
+    password: test
+    host: localhost
