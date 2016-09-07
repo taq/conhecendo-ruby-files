@@ -1,0 +1,19 @@
+task default: "files:list"
+
+namespace :files do
+  desc "Lista os arquivos candidatos à compactação"
+  task :list do
+    Dir.glob("*.txt") do |file|
+      puts "encontrei o arquivo: #{file}"
+    end
+  end
+end
+
+namespace :zip do
+  desc "Lista os arquivos compactados"
+  task :list do
+    Dir.glob("*.zip") do |file|
+      puts "encontrei o arquivo: #{file}"
+    end
+  end
+end

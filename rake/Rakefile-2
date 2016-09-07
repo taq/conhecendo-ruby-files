@@ -1,0 +1,8 @@
+task default: :list
+
+desc "Lista os arquivos"
+task :list do
+  Dir.glob("*.txt") do |file|
+    puts "encontrei o arquivo: #{file}"
+  end
+end

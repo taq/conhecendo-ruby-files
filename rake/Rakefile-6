@@ -1,0 +1,52 @@
+require "open3"
+
+task default: "files:list"
+
+filemask = "*.txt"
+zipfile  = "rake.zip"
+
+namespace :files do
+  desc "Lista os arquivos candidatos à compactação"
+  task :list do
+    Dir.glob(filemask) do |file|
+      puts "encontrei o arquivo: #{file}"
+    end
+  end
+end
+
+namespace :zip do
+  desc "Lista os arquivos compactados"
+  task :list do
+    Dir.glob(zipfile) do |file|
+      puts "encontrei o arquivo: #{file}"
+    end
+  end
+
+  desc "Apaga o arquivo .zip anterior" 
+  task :clean do
+    puts "Apagando o arquivo #{zipfile}, se existir ..."
+    File.delete(zipfile) if File.exists?(zipfile)
+  end
+
+  desc "Cria o arquivo .zip" 
+  task build: :clean do
+    puts "Criando o arquivo #{zipfile} ..."
+    list = Rake::FileList[filemask]
+    list.exclude(/\A[a-zA-Z]+/)
+    list = list.sort.join(", ")
+
+    puts "Adicionando os arquivos #{list} ..."
+    stdin, stdout, stderr = Open3.popen3("zip #{zipfile} #{list}")
+    error = stderr.read
+    if error.size == 0
+      puts "Arquivo criado com sucesso."
+    else
+      puts "Erro criando o arquivo: #{error}"
+    end
+  end
+
+  desc "Cria o arquivo rake.zip se não estiver criado"
+  file "rake.zip" do
+    Rake::Task["zip:build"].invoke
+  end
+end
