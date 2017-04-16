@@ -23,6 +23,6 @@ class Carro: public Automovel, public Radio {
 
 int main() {
   Carro carro;
-  carro.Automovel::ligar();
+  carro.ligar(); // só compila com Automovel::ligar();
   return 0;
 }
