@@ -15,7 +15,8 @@ class Carro
 end
 
 class Carro
-  alias_method :to_s_old, :to_s
+  alias to_s_old to_s
+
   def to_s
     "Esse é um novo jeito de mostrar isso: #{to_s_old}"
   end
