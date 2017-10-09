@@ -31,7 +31,7 @@ namespace :zip do
   desc "Cria o arquivo .zip" 
   task build: :clean do
     puts "Criando o arquivo #{zipfile} ..."
-    list = Dir.glob(filemask).sort.join(", ")
+    list = Dir.glob(filemask).sort.join(" ")
     puts "Adicionando os arquivos #{list} ..."
     stdin, stdout, stderr = Open3.popen3("zip #{zipfile} #{list}")
     error = stderr.read
