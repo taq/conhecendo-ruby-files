@@ -1,0 +1,14 @@
+_start_
+Esse é um parágrafo de texto
+que vai ser indentado.
+_end_
+esse não vai ter indentação.
+esse também não.
+_start_
+E aqui tem outro!
+_end_
+_start_
+E mais um aqui
+com mais linhas
+só de teste.
+_end_

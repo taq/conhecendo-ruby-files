@@ -10,7 +10,7 @@ class Carro
   end
 
   def to_s
-    "Marca:#{@marca} Modelo:#{@modelo} Cor:#{@cor} Tanque:#{@tanque}"
+    "Marca: #{@marca} Modelo: #{@modelo} Cor: #{@cor} Tanque: #{@tanque}"
   end
 
   def galoes
