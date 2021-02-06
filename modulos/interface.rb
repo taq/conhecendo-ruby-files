@@ -46,25 +46,3 @@ module BazInterface
   include AbstractInterface
   abstract_method :baz
 end
-
-class Test
-  include FooBarInterface
-  include BazInterface
-
-  def foo
-    puts "foo"
-  end
-
-  def bar
-    puts "bar"
-  end
-
-  def baz
-    puts "baz"
-  end
-end
-
-t = Test.new
-t.foo
-t.bar
-t.baz
