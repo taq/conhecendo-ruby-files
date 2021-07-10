@@ -1,5 +1,5 @@
-require "minitest/autorun"
-require_relative "calc"
+require 'minitest/autorun'
+require_relative 'calc'
 
 class TesteCalculadora < Minitest::Test
   def setup

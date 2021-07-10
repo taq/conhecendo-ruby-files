@@ -12,13 +12,13 @@ class Carro
   end
 
   def to_s
-    "Marca:#{@marca} Modelo:#{@modelo} Cor:#{@cor} Tanque:#{@tanque}"
+    "Marca: #{@marca} Modelo: #{@modelo} Cor: #{@cor} Tanque: #{@tanque}"
   end
 end
 
 class NovoCarro < Carro
   def to_s
-    "Novo Carro: "+super
+    "Novo Carro: #{super}"
   end
 end
 

@@ -5,7 +5,7 @@ f1 = Fiber.new do |other|
   other.transfer Fiber.current, 10
 end
 
-f2 = Fiber.new do |caller,value|
+f2 = Fiber.new do |caller, value|
   puts "Estou em f2, transferindo para f1 ..."
   caller.transfer value + 40
   puts "Cheguei aqui?"

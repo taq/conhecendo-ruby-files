@@ -26,7 +26,7 @@ class CaixaDeParafusos
   end
 
   def each
-    @parafusos.each { |numero| yield(numero) }
+    @parafusos.each { |parafuso| yield(parafuso) }
   end
 end
 

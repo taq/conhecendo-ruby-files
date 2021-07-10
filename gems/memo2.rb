@@ -1,4 +1,5 @@
-require "memoize"
+require 'benchmark'
+require 'memoize'
 include Memoize
 
 def fib(numero)
@@ -7,6 +8,4 @@ def fib(numero)
 end
 memoize(:fib)
 
-puts Time.now
-puts fib(ARGV[0].to_i)
-puts Time.now
+puts Benchmark.measure { puts fib(ARGV[0].to_i) }

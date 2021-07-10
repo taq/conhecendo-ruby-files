@@ -1,10 +1,17 @@
 class C
-  def x; "x"; end
+  def x
+    'x'
+  end
 end
 
 module M
-  def x; '[' + super + ']'; end
-  def y; "y"; end
+  def x
+    "[#{super}]"
+  end
+
+  def y
+    'y'
+  end
 end
 
 class C
