@@ -1,6 +1,6 @@
 require "net/ftp"
 
-host = "ftp.mozilla.org"
+host = "ftp.gnu.org"
 user = "anonymous"
 pass = "eustaquiorangel@gmail.com"
 file = "README"

@@ -11,6 +11,9 @@ public class Carro {
   }
 
   public String toString() {
-    return "Marca: " + this.marca + "\n" + "Cor: "+this.cor + "\n" + "Modelo:"+this.modelo + "\n" + "Tanque:" + this.tanque;
+    return "Marca: " + this.marca  + "\n" +
+           "Cor: "   + this.cor    + "\n" +
+           "Modelo:" + this.modelo + "\n" +
+           "Tanque:" + this.tanque;
   }
 }

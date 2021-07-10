@@ -9,9 +9,12 @@ union data {
 
 int main() {
   union data d;
+
   d.id = 1;
   printf("%d\n", d.id);
+
   strcpy(d.name, "taq");
   printf("%s\n", d.name);
+
   return 0;
 }

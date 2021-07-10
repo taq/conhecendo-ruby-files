@@ -1,4 +1,6 @@
-require "#{File.expand_path(File.dirname(__FILE__))}/portnum/version"
+# frozen_string_literal: true
+
+require_relative "portnum/version"
 
 class Numeric
   def par?
@@ -6,6 +8,6 @@ class Numeric
   end
 
   def impar?
-    self % 2 == 1
+    self % 2 != 0
   end
 end

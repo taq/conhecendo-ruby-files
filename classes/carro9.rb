@@ -6,11 +6,11 @@ class Carro
     @marca  = marca
     @modelo = modelo
     @cor    = cor
-    @tanque = tanque    
+    @tanque = tanque
   end
 
   def to_s
-    "Marca:#{@marca} Modelo:#{@modelo} Cor:#{@cor} Tanque:#{@tanque}"
+    "Marca: #{@marca} Modelo: #{@modelo} Cor: #{@cor} Tanque: #{@tanque}"
   end
 end
 

@@ -21,7 +21,7 @@ struct tm *get_date_time() {
 }
 
 VALUE data(VALUE self) {
-  char str[15];
+  char str[30];
   struct tm *dc = get_date_time();
   sprintf(str, "%02d/%02d/%04d", dc->tm_mday, dc->tm_mon + 1, dc->tm_year + 1900);
   return rb_str_new2(str);

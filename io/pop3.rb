@@ -1,5 +1,5 @@
 require "net/pop"
-    require "highline/import"
+require "highline/import"
 
 user = "eustaquiorangel@gmail.com"
 pass = ask("digite sua senha:") { |q| q.echo = "*" }

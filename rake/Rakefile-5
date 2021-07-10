@@ -1,7 +1,6 @@
 require "open3"
 
 task default: "files:list"
-
 filemask = "*.txt"
 zipfile  = "rake.zip"
 
@@ -34,12 +33,7 @@ namespace :zip do
     list = Dir.glob(filemask).sort.join(", ")
     puts "Adicionando os arquivos #{list} ..."
     stdin, stdout, stderr = Open3.popen3("zip #{zipfile} #{list}")
-    error = stderr.read
-    if error.size == 0
-      puts "Arquivo criado com sucesso."
-    else
-      puts "Erro criando o arquivo: #{error}"
-    end
+    puts stderr.read.size == 0 ? "Arquivo criado com sucesso." : "Erro criando o arquivo: #{error}"
   end
 
   desc "Cria o arquivo rake.zip se não estiver criado"

@@ -7,7 +7,7 @@ TCPServer.open("localhost", 8081) do |server|
     puts "aguardando conexão ..."
     con = server.accept
     puts "conexão recebida!"
-    con.puts Time.now
+    con.puts "Sua conexão foi recebida!"
     con.close
   end
 end

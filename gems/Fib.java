@@ -1,6 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 public class Fib {
   public static long calcula(int numero) {
     if (numero < 2) {
@@ -10,9 +7,10 @@ public class Fib {
   }
 
   public static void main(String args[]) {
-    SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
-    System.out.println(fmt.format(Calendar.getInstance().getTime()));
-    System.out.println(calcula(Integer.parseInt(args[0])));
-    System.out.println(fmt.format(Calendar.getInstance().getTime()));
+      long started_at = System.currentTimeMillis();
+      System.out.println(calcula(Integer.parseInt(args[0])));
+
+      long diff = System.currentTimeMillis() - started_at;
+      System.out.println((float) diff / 1000);
   }
 }

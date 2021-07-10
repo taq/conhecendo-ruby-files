@@ -1,13 +1,15 @@
-require "parallel"
+require 'benchmark'
+require 'parallel'
 
-puts Time.now
-res = "Quem terminou primeiro? "
+time = Benchmark.measure do
+  res = 'Quem terminou primeiro? '
 
-Parallel.map 1..20 do |nr|
-  5.times { |t| sleep rand; print "'#{nr}/#{t}' " }
-  puts "acabei com #{nr} "
-  res += "#{nr} "
+  Parallel.map 1..20 do |nr|
+    puts "Acabei com #{nr} "
+    res += "#{nr} "
+  end
+
+  puts res
 end
 
-puts res
-puts Time.now
+puts time

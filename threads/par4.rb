@@ -1,15 +1,19 @@
-puts Time.now
-res = "Quem terminou primeiro? "
+require 'benchmark'
+
 threads = []
 
-(1..20).each do |nr|
-  threads << Thread.new do
-    5.times { |t| sleep rand; print "'#{nr}/#{t}' " }
-    puts "acabei com #{nr} "
-    res += "#{nr} "
-  end
-end
-threads.each(&:join)
+time = Benchmark.measure do
+  res = 'Quem terminou primeiro? '
 
-puts res
-puts Time.now
+  (1..20).each do |nr|
+    threads << Thread.new do
+      puts "acabei com #{nr} "
+      res += "#{nr} "
+    end
+  end
+
+  threads.each(&:join)
+  puts res
+end
+
+puts time

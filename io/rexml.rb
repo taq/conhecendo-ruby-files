@@ -7,11 +7,11 @@ doc.add decl
 root = REXML::Element.new("alunos")
 doc.add_element root
 
-alunos = [ 
+alunos = [
   [1, "João"],
   [2, "José"],
   [3, "Antonio"],
-  [4,"Maria"]
+  [4, "Maria"]
 ]
 
 alunos.each do |info|
@@ -26,4 +26,5 @@ alunos.each do |info|
   aluno.add_element nome
   root.add_element aluno
 end
+
 doc.write(File.open("alunos.xml", "w"))

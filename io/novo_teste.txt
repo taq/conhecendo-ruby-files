@@ -1,0 +1,4 @@
+Arquivo de teste
+Curso de Ruby
+Estamos na terceira linha.
+E aqui é a quarta e última.
