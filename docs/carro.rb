@@ -2,7 +2,7 @@
 # criar no nosso programa. A partir dela criamos carros
 # de marcas específicas.
 #
-# Autor:: Eustáquio ’TaQ’ Rangel
+# Autor:: Eustáquio 'TaQ' Rangel
 # Licença:: GPL
 class Carro
   attr_reader :marca, :modelo, :tanque
