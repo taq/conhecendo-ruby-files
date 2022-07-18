@@ -7,7 +7,7 @@
 #
 # == Sobre o autor e licença
 #
-# Autor:: Eustáquio ’TaQ’ Rangel
+# Autor:: Eustáquio 'TaQ' Rangel
 # Website:: http://eustaquiorangel.com
 # Email:: mailto:naoteconto@eustaquiorangel.com
 # Licença:: +GPL+ Clique aqui para ver mais[http://www.fsf.org]
