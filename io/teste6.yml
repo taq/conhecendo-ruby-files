@@ -1,0 +1,2 @@
+---
+  two_words: !ruby/regexp /\A\w+\s\w+\z/i
