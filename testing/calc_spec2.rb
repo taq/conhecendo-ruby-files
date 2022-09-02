@@ -15,7 +15,8 @@ describe Calculadora do
       colecao = MiniTest::Mock.new
       colecao.expect :valores, [1, 2, 3]
       @calculadora.media(colecao)
-      colecao.verify
+
+      assert_mock colecao
     end
   end
 end
