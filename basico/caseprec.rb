@@ -1,7 +1,7 @@
 i = 10
 
 case i
-when Fixnum
+when Integer
   puts "Número!"
 when (0..100)
   puts "entre 0 e 100"

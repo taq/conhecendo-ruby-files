@@ -15,4 +15,4 @@ producer = Ractor.new(consumer) do |consumer|
   end
 end
 
-sleep 5
+producer.take

@@ -1,7 +1,7 @@
 i = 10
 
 case i
-when Fixnum
+when Integer
   puts "Número!"
 when String
   puts "String!"

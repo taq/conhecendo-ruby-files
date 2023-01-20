@@ -3,4 +3,4 @@ ractor = Ractor.new do
 end
 
 puts "A hora corrente no mundo do Ractor é #{ractor.take}"
-sleep 1
+ractor.take

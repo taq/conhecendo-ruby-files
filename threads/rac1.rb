@@ -3,4 +3,4 @@ ractor = Ractor.new do
 end
 
 ractor.send "Olá, mundo dos Ractors!"
-sleep 1
+ractor.take
