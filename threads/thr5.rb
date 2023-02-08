@@ -14,7 +14,7 @@ end
 t2 = Thread.new do
   loop do
     mutex.synchronize do
-      log = menor+maior
+      log = menor + maior
     end
   end
 end

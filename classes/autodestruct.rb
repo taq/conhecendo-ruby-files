@@ -1,7 +1,7 @@
 class Teste
   def apenas_uma_vez
     def self.apenas_uma_vez
-      raise StandardError, "Esse metodo se destruiu!"
+      raise StandardError, "Esse método se destruiu!"
     end
 
     puts "Vou rodar apenas essa vez hein?"
