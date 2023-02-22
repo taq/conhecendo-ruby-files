@@ -3,7 +3,7 @@ require 'active_record'
 # estabelecendo a conexão
 ActiveRecord::Base.establish_connection({
   adapter:  'sqlite3',
-  database: 'alunos.sqlite3',
+  database: 'alunos.sqlite3'
 })
 
 # criando o mapeamento da classe com a tabela
