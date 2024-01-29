@@ -1,0 +1,12 @@
+# TypeProf 0.21.9
+
+# Classes
+class Carro
+  @@qtde: Integer
+
+  attr_reader marca: String
+  attr_reader modelo: String
+  attr_reader tanque: Integer
+  attr_accessor cor: String
+  def initialize: (String marca, String modelo, String cor, Integer tanque) -> void
+end

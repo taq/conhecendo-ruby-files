@@ -1,0 +1,6 @@
+D = Steep::Diagnostic
+
+ target :lib do
+   signature "."
+   check "."
+end
