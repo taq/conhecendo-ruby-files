@@ -1,0 +1,8 @@
+# Classes
+class Carro
+  attr_reader marca: untyped
+  attr_reader modelo: untyped
+  attr_reader tanque: untyped
+  attr_accessor cor: untyped
+  def initialize: (untyped marca, untyped modelo, untyped cor, untyped tanque) -> untyped
+end
