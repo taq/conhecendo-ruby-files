@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "java"
 
-%w(JFrame JLabel JPanel JButton).each { |c| java_import("javax.swing.#{c}") }
+%w(JFrame JLabel JPanel JButton).each { |it| java_import("javax.swing.#{it}") }
 
 class Alistener
   include java.awt.event.ActionListener

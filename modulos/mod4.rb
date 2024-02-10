@@ -26,7 +26,7 @@ class CaixaDeParafusos
   end
 
   def each
-    @parafusos.each { |parafuso| yield(parafuso) }
+    @parafusos.each { |it| yield(it) }
   end
 end
 
@@ -37,5 +37,5 @@ caixa << Parafuso.new(3)
 
 puts "o menor parafuso na caixa é: #{caixa.min}"
 puts "o maior parafuso na caixa é: #{caixa.max}"
-puts "os parafusos com medidas par são: #{caixa.select { |parafuso| parafuso.polegadas % 2 == 0}.join(',')}"
-puts "duplicando a caixa: #{caixa.map { |parafuso| Parafuso.new(parafuso.polegadas * 2)}}"
+puts "os parafusos com medidas par são: #{caixa.select { |it| it.polegadas % 2 == 0}.join(',')}"
+puts "duplicando a caixa: #{caixa.map { |it| Parafuso.new(it.polegadas * 2).to_s }}"

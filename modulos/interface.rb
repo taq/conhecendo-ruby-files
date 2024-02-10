@@ -10,7 +10,7 @@ module AbstractInterface
 
     TracePoint.new(:end) do |tp|
       return if tp.self != other || methods.nil?
-      missing = methods.select { |method| !other.instance_methods.include?(method) }
+      missing = methods.select { |it| !other.instance_methods.include?(it) }
       raise NotImplementedError.new(missing) if missing.any?
     end.enable
   end

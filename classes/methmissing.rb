@@ -3,7 +3,7 @@ class Teste
     sanitized = meth.to_s.split("=").first
 
     if meth =~ /=$/
-      self.class.send(:define_method, meth) { |val| instance_variable_set("@#{sanitized}", val) }
+      self.class.send(:define_method, meth) { |it| instance_variable_set("@#{sanitized}", it) }
       self.send(meth, value)
     else
       self.class.send(:define_method, sanitized) { instance_variable_get("@#{sanitized}") }

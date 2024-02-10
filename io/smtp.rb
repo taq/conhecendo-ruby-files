@@ -2,7 +2,7 @@ require "net/smtp"
 require "highline/import"
 
 from = "eustaquiorangel@gmail.com"
-pass = ask("digite sua senha:") { |q| q.echo = "*" }
+pass = ask("digite sua senha:") { |it| it.echo = "*" }
 to   = "eustaquiorangel@gmail.com"
 
 msg =<<FIM

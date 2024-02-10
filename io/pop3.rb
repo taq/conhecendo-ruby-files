@@ -2,7 +2,7 @@ require "net/pop"
 require "highline/import"
 
 user = "eustaquiorangel@gmail.com"
-pass = ask("digite sua senha:") { |q| q.echo = "*" }
+pass = ask("digite sua senha:") { |it| it.echo = "*" }
 
 pop = Net::POP3.new("pop.gmail.com", 995)
 pop.enable_ssl(OpenSSL::SSL::VERIFY_NONE)

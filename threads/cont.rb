@@ -2,7 +2,7 @@ require 'continuation'
 
 def cria_continuation
   puts 'Criando a continuation e retornando ...'
-  callcc { |obj| return obj }
+  callcc { |it| return it }
   puts 'Ei, olha eu aqui de volta na continuation!'
 end
 
