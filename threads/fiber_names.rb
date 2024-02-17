@@ -2,12 +2,12 @@
 # frozen_string_literal: true
 require 'json'
 require 'net/http'
-require 'fiber_scheduler'
+require 'async/io'
 
 start = Time.now
 
 Thread.new do
-  Fiber.set_scheduler(FiberScheduler.new)
+  Fiber.set_scheduler Async::Scheduler.new
 
   %w[Joao Maria Eustaquio].each do |name|
     Fiber.schedule do
