@@ -1,4 +1,4 @@
-require "open-uri"
+require 'open-uri'
 
-resposta = URI.open("http://eustaquiorangel.com")
-puts resposta.read.scan(/<h1>.*<\/h1>/)
+response = URI.open('http://httpforever.com')
+puts response.read.scan(/<h2>.*<\/h2>/)

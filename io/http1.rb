@@ -1,6 +1,7 @@
-require "net/http"
+require 'net/http'
 
-host = Net::HTTP.new("eustaquiorangel.com", 80)
-resposta = host.get("/")
-return if resposta.message != "OK"
-puts resposta.body.scan(/<h1>.*<\/h1>/)
+request  = Net::HTTP.new('httpforever.com', 80)
+response = request.get('/')
+return unless response.message == 'OK'
+
+puts response.body.scan(/<h2>.*<\/h2>/)
