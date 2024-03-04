@@ -1,14 +1,11 @@
-require "net/https"
+require 'net/http'
 
 begin
-  site = Net::HTTP.new("postman-echo.com", 443)
-  site.use_ssl = true
+  host = Net::HTTP.new('postman-echo.com', 443)
+  host.use_ssl = true
+  res = host.get('/get?foo=bar')
 
-  site.start do |http|
-    req = Net::HTTP::Get.new("/get?foo=bar")
-    response = http.request(req)
-    puts response.body
-  end
-rescue => exception
-  puts "erro: #{e}"
+  puts res.body if res.is_a?(Net::HTTPSuccess)
+rescue => exc
+  puts "erro: #{exc}"
 end
