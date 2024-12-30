@@ -3,6 +3,12 @@ module TesteMod
     def class_method
       puts "Esse é um método da classe!"
     end
+
+    private
+
+    def private_method
+      puts "Esse é um método privado de classe!"
+    end
   end
 
   def self.included(where)
@@ -21,3 +27,4 @@ end
 t = TesteCls.new
 t.instance_method
 TesteCls.class_method
+TesteCls.private_method
