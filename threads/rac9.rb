@@ -25,7 +25,7 @@ Benchmark.bm do |bm|
 
   bm.report 'em paralelo' do
     puts "\n"
-    4.times.map do |seq|
+    times.times.map do |seq|
       Ractor.new(num, seq) do |num, seq|
         puts "Sequência #{seq}: #{fib(num)}"
       end
