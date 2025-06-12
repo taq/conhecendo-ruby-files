@@ -2,8 +2,14 @@ mutex       = Mutex.new
 last_result = 1
 last_update = Time.now
 
-trap('SIGINT') do
-  puts 'Saindo do programa ...'
+Signal.trap('INT') do
+  puts 'Saindo do programa, interrompendo com CTRL+C ...'
+  exit
+end
+
+Signal.trap('TERM') do
+  puts 'Saindo do programa, interrompendo com SIGTERM ...'
+  puts 'Fazendo uma limpezinha básica ...'
   exit
 end
 
@@ -15,7 +21,7 @@ Thread.new do
     mutex.synchronize do
       # fazendo alguma coisa demorada aqui
       puts 'Mutex sincronizado, vou fazer algo ...'
-      sleep 10
+      sleep 30
       puts 'Terminei de fazer algo no mutex, vou liberar a sincronização'
       last_result += 1
     end
