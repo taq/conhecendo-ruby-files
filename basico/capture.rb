@@ -7,5 +7,5 @@ end
 t = Teste.new
 m = t.method(:teste)
 p m
-m.(3)
+m.call(3)
 p m.to_proc
