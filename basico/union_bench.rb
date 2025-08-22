@@ -1,9 +1,11 @@
+# typed: false
+
 require 'benchmark'
 
-a1 = ["a", "b", "c"]
-a2 = ["c", "d", "a"]
-a3 = ["a", "a", "b", "b", "c", "c", "d", "e"]
-a4 = ["a", "b", "d"]
+a1 = %w[a b c]
+a2 = %w[c d a]
+a3 = %w[a a b b c c d e]
+a4 = %w[a b d]
 nt = 10_000
 
 Benchmark.bm do |bm|

@@ -1,6 +1,6 @@
 class NameNotEqual < StandardError
   def initialize(current, expected)
-    super "Você digitou um nome inválido (#{current})! Era esperado #{expected}."
+    super("Você digitou um nome inválido (#{current})! Era esperado #{expected}.")
   end
 end
 

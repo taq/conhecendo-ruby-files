@@ -1,9 +1,9 @@
 begin
   begin
     raise 'foo'
-  rescue Exception => foo
+  rescue StandardError => foo
     raise 'bar'
   end
-rescue Exception => bar
+rescue StandardError => bar
   puts "a causa de #{bar} foi #{bar.cause}"
 end

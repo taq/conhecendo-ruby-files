@@ -3,7 +3,7 @@ numero2 = 1
 
 begin
   puts numero1 + numero2
-  raise Exception.new("esperava 3") if numero1+numero2!=3
-rescue => exception
-  puts "Ops, problemas aqui (#{exception.class}), vou tentar de novo."
+  raise StandardError, "esperava 3" if numero1 + numero2 != 3
+rescue StandardError => e
+  puts "Ops, problemas aqui (#{e.class}), vou tentar de novo."
 end

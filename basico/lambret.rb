@@ -1,5 +1,5 @@
 def testando_lambda
-  l = lambda { return "Oi!" }
+  l = lambda { "Oi!" }
   l.call
   "Imprima isso."
 end
