@@ -1,8 +1,8 @@
-dup   = ->(x) { x * 2   }
-sqr   = ->(x) { x ** 2  }
-half  = ->(x) { x / 2   }
-tenp  = ->(x) { x * 0.1 }
-crazy = dup >> sqr >> half >> tenp
+duplicar = ->(x) { x * 2   }
+quadrado = ->(x) { x ** 2  }
+metade   = ->(x) { x / 2   }
+decimo   = ->(x) { x * 0.1 }
+crazy = duplicar >> quadrado >> metade >> decimo
 
 puts crazy.call(2)
 
