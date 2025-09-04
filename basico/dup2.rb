@@ -1,8 +1,8 @@
-dup  = ->(x) { x * 2  }
-sqr  = ->(x) { x ** 2 }
-dup2 = dup >> sqr
+duplicar = ->(x) { x * 2  }
+quadrado = ->(x) { x ** 2 }
+dup2     = duplicar >> quadrado
 
 puts dup2.call(2)
 
 # seria o mesmo que
-puts sqr.call(dup.call(2))
+puts quadrado.call(duplicar.call(2))
