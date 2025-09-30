@@ -17,7 +17,7 @@ end
 corsa = Carro.new(:chevrolet, :corsa, :preto, 50)
 gol   = Carro.new(:volks, :gol, :azul, 42)
 
-(class << corsa; self; end).send(:define_method, "multiplica_tanque") do |valor|
+(class << corsa; self; end).send(:define_method, :multiplica_tanque) do |valor|
   @tanque * valor
 end
 
