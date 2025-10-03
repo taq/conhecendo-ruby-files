@@ -1,3 +1,6 @@
+# typed: false
+# frozen_string_literal: true
+
 class Teste
   def self.method_added(meth)
     puts "Adicionado o método #{meth}"
@@ -9,7 +12,7 @@ class Teste
 end
 
 t = Teste.new
-t.class.send(:define_method,"teste") { puts "teste!" }
+t.class.send(:define_method, :teste) { puts "teste!" }
 t.teste
-t.class.send(:remove_method,:teste)
+t.class.send(:remove_method, :teste)
 t.teste
