@@ -43,7 +43,7 @@ using NewHashToS
 puts "no contexto principal, refinado: #{values}"
 
 p NewHashToS.refinements
-p NewHashToS.refinements[0].refined_class
+p NewHashToS.refinements[0].target
 p NewHashToS.refinements[0].instance_methods(false)
 p Module.used_refinements
 p Segunda.used_refinements
