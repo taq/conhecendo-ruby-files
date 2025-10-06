@@ -24,7 +24,7 @@ class CaixaDeParafusos
     caixas = Array.new(@quantidade / quantidade, quantidade)
     caixas << @quantidade % quantidade if @quantidade % quantidade > 0
     @quantidade = 0
-    caixas.map { |it| CaixaDeParafusos.new(it) }
+    caixas.map { CaixaDeParafusos.new(it) }
   end
 end
 

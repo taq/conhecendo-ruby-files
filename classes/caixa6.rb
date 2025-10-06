@@ -22,9 +22,9 @@ class CaixaDeParafusos
 
   def /(quantidade)
     caixas = Array.new(quantidade, @quantidade / quantidade)
-    (@quantidade % quantidade).times { |it| caixas[it] += 1 }
+    (@quantidade % quantidade).times { caixas[it] += 1 }
     @quantidade = 0
-    caixas.map { |it| CaixaDeParafusos.new(it) }
+    caixas.map { CaixaDeParafusos.new(it) }
   end
 
   def -@
