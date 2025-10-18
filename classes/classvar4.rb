@@ -24,3 +24,7 @@ corsa   = Carro.new(:chevrolet, :corsa, :preto, 50)
 gol     = Carro.new(:volks ,:gol, :azul, 42)
 ferrari = Carro.new(:ferrari, :enzo, :vermelho, 70)
 puts Carro.qtde
+
+# Isso vai ficar comentado até aprendemos como corrigir, mais à frente
+#Carro.qtde = 10
+#puts Carro.qtde
