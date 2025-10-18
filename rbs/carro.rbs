@@ -1,8 +1,11 @@
-# Classes
+# TypeProf 0.30.1
+
+# carro.rb
 class Carro
-  attr_reader marca: String
-  attr_reader modelo: String
-  attr_reader tanque: Integer
-  attr_accessor cor: String
-  def initialize: (String marca, String modelo, String cor, Integer tanque) -> Integer
+  def marca: -> String
+  def modelo: -> String
+  def tanque: -> Integer
+  def cor: -> String
+  def cor=: (untyped) -> String
+  def initialize: (String, String, String, Integer) -> Integer
 end

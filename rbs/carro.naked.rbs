@@ -1,8 +1,11 @@
-# Classes
+# TypeProf 0.30.1
+
+# carro.rb
 class Carro
-  attr_reader marca: untyped
-  attr_reader modelo: untyped
-  attr_reader tanque: untyped
-  attr_accessor cor: untyped
-  def initialize: (untyped marca, untyped modelo, untyped cor, untyped tanque) -> untyped
+  def marca: -> untyped
+  def modelo: -> untyped
+  def tanque: -> untyped
+  def cor: -> untyped
+  def cor=: (untyped) -> untyped
+  def initialize: (untyped, untyped, untyped, untyped) -> untyped
 end
