@@ -1,27 +1,30 @@
 require "net/smtp"
 require "highline/import"
 
-from = "eustaquiorangel@gmail.com"
-pass = ask("digite sua senha:") { |it| it.echo = "*" }
-to   = "eustaquiorangel@gmail.com"
+# se precisar digitar uma senha para autenticação, remova o comentário da linha
+# abaixo
+#pass   = ask("digite sua senha:") { |it| it.echo = "*" }
+from    = 'taq@eustaquirangel.com'
+to      = 'taq@eustaquiorangel.com'
+subject = 'Teste de SMTP'
+body    = 'Apenas um teste de envio de email no Ruby'
 
-msg =<<FIM
-From: #{from}
-Subject: Teste de SMTP no Ruby
-Apenas um teste de envio de email no Ruby.
-Falou!
-FIM
+message = <<~MSG
+  From: #{from}
+  To: #{to}
+  Subject: #{subject}
 
-smtp = Net::SMTP.new("smtp.gmail.com", 587)
-smtp.enable_starttls
+  #{body}
+MSG
 
 begin
-  smtp.start("localhost", from, pass, :plain) do |smtp|
-    puts "conexão aberta!"
-    smtp.send_message(msg, from, to)
-    puts "mensagem enviada!"
+  # se o seu servidor requisita autenticação, remova o comentário da linha
+  # abaixo e comente a próxima
+  #Net::SMTP.start("localhost", 1025, 'localhost', 'user', 'pass', :login) do |smtp|
+  Net::SMTP.start("localhost", 1025) do |smtp|
+    smtp.send_message(message, from, to)
   end
-rescue => exception
-  puts "ERRO: #{exception}"
-  puts exception.backtrace
+  puts "Mensagem enviada!"
+rescue StandardError => e
+  puts "Erro ao enviar: #{e.message}"
 end

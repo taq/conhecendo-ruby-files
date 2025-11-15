@@ -1,22 +1,23 @@
 require "net/pop"
-require "highline/import"
 
-user = "eustaquiorangel@gmail.com"
-pass = ask("digite sua senha:") { |it| it.echo = "*" }
-
-pop = Net::POP3.new("pop.gmail.com", 995)
-pop.enable_ssl(OpenSSL::SSL::VERIFY_NONE)
+# aqui são os dados que criamos no arquivo de autenticação!
+user = 'user'
+pass = 'pass'
 
 begin
-  pop.start(user, pass) do |pop|
+  Net::POP3.start("localhost", 1110, user, pass) do |pop|
     if pop.mails.empty?
       puts "Sem emails!"
       return
     end
-    pop.each do |msg|
+
+    pop.mails.each do |msg|
       puts msg.header
+
+      # para deletar após ler (opcional)
+      # msg.delete
     end
   end
-rescue => exception
-  puts "ERRO: #{exception}"
+rescue StandardError => e
+  puts "Erro ao recuperar emails: #{e}"
 end
