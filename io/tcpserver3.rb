@@ -13,7 +13,7 @@ TCPServer.open("localhost", 8081) do |server|
       str = con.gets
       break if str.match?(/sair/)
 
-      puts "você digitou: #{str}"
+      con.puts "você digitou: #{str}"
     end
 
     con.close
