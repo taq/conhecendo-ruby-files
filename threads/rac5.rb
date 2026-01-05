@@ -1,6 +1,7 @@
 nome = "taq"
 ractor = Ractor.new do
-  Ractor.yield nome # para funcionar, troquem nome para "taq"
+  # Vai dar erro! Não pode acessar variáveis externas
+  nome # para funcionar, use "taq" diretamente
 end
 
-puts "o nome é #{ractor.take}"
+ractor.join

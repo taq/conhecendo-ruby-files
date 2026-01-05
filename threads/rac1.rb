@@ -1,6 +1,11 @@
+# O Ractor usa seu default_port automaticamente
 ractor = Ractor.new do
-  puts "Recebida mensagem: #{Ractor.receive}"
+  mensagem = Ractor.receive  # Recebe do default_port
+  puts "Recebida mensagem: #{mensagem}"
 end
 
-ractor.send "Olá, mundo dos Ractors!"
-ractor.take
+# Enviamos a mensagem para o default_port do ractor
+ractor << "Olá, mundo dos Ractors!"
+
+# Esperamos o Ractor terminar (similar ao Thread#join)
+ractor.join
