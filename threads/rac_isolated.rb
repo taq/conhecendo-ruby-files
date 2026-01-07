@@ -12,7 +12,7 @@ end
 # múltiplas threads fazendo operações concorrentes
 threads = 10.times.map do |i|
   Thread.new do
-    # cada thread tem seu próprio Port
+    # cada thread tem sua própria Port
     my_port = Ractor::Port.new
     worker << { data: rand(100), response: my_port }
     puts "Thread #{i}: #{my_port.receive}"
