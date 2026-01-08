@@ -1,44 +1,43 @@
 require 'etc'
 
-# um único Port para coletar todos os resultados - reutilizado!
+manager = Ractor.new do
+  tasks = Ractor.receive  # recebe o Array de tasks primeiro
+
+  loop do
+    requester = Ractor.receive  # recebe o worker pedindo trabalho
+    tasks.empty? ? requester.send(:stop) : requester.send(tasks.shift)
+  end
+end
+
+# alimenta a fila ANTES de criar os workers
+values = (0...20).to_a.shuffle
+manager.send(values)
+
 result_port = Ractor::Port.new
 
-# criamos um pool de workers (um por CPU)
+# workers puxam trabalho
 workers = Etc.nprocessors.times.map do |id|
-  Ractor.new(id, result_port) do |worker_id, results|
+  Ractor.new(id, result_port, manager) do |id, result_port, manager|
     loop do
-      # recebe tarefas do default_port
-      task = Ractor.receive
+      manager.send(Ractor.current)  # pede trabalho
+      task = Ractor.receive         # aguarda a task
       break if task == :stop
 
-      # processa a tarefa
+      sleep(rand * 0.1)
       result = task * task
 
-      # envia resultado (REUTILIZA o mesmo Port)
-      results << { worker_id: worker_id, result: result }
+      result_port << { id: id, result: result }
     end
   end
 end
 
-# distribuímos 20 tarefas
-tasks = (0...20).to_a.shuffle
-tasks.each_with_index do |task, idx|
-  workers[idx % workers.size] << task
-end
-
-# sinalizamos para os workers pararem
-workers.each { |w| w << :stop }
-
-# coletamos os 20 resultados do MESMO Port
+# coleta resultados
 results = []
-20.times do
-  results << result_port.receive
+values.size.times { results << result_port.receive }
+
+# vamos ver os workers de 0 até Etc.nprocessors processando as tarefas
+results.sort_by { |r| r[:id] }.each do |r|
+  puts "Worker #{r[:id]}: #{r[:result]}"
 end
 
-# mostramos os resultados
-results.sort_by { |r| r[:result] }.each do |r|
-  puts "Worker #{r[:worker_id]}: #{r[:result]}"
-end
-
-# esperamos todos terminarem
 workers.each(&:join)
