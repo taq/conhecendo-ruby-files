@@ -10,7 +10,7 @@ end
 # produtores enviam para o default_port do consumidor
 p1 = Ractor.new(consumer) do |consumer|
   5.times do |num|
-    items = Array.new(num, 'item').freeze
+    items = Array.new(num, 'item')
     puts "Enviando #{items}\n"
     consumer << items
     sleep 0.1
@@ -19,7 +19,7 @@ end
 
 p2 = Ractor.new(consumer) do |consumer|
   5.times do |num|
-    items = Array.new(num, 'new item').freeze
+    items = Array.new(num, 'new item')
     puts "Enviando #{items}\n"
     consumer << items
     sleep 0.1
