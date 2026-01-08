@@ -8,8 +8,8 @@ end
 
 # produtor: envia mensagens para o default_port do consumidor
 producer = Ractor.new(consumer) do |consumer|
-  5.times do |num|
-    items = Array.new(num, 'item')
+  5.times do
+    items = Array.new(rand(10), 'item')
     puts "Enviando #{items.size}\n"
     consumer << items.size  # Envia para o default_port
     sleep 0.1

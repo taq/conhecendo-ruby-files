@@ -7,8 +7,8 @@ consumer = Ractor.new do
 end
 
 producer = Ractor.new(consumer) do |consumer|
-  5.times do |num|
-    items = Array.new(num, 'item').freeze
+  5.times do
+    items = Array.new(rand(10), 'item').freeze
     puts "Enviando #{items}\n"
     consumer << items  # Para o default_port
     sleep 0.1
