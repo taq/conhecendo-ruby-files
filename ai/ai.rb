@@ -13,6 +13,20 @@ chat = RubyLLM.chat
 puts "Resposta de texto:\n"
 puts chat.ask("Me responda em 1 parágrafo as características da linguagem Ruby").content
 
+# perguntando e recebendo informações no callback
+chat.on_end_message do |message|
+  rsp = {
+    provider: chat.model.provider,
+    model: chat.model.id,
+    input_tokens: message&.input_tokens || 0,
+    output_tokens: message&.output_tokens || 0
+  }
+  puts "Mensagem recebida, estatísticas: #{rsp}"
+end
+
+puts "\nPerguntando qual a característica mais legal:\n"
+puts chat.ask("Das características da linguagem Ruby, qual você acha mais legal? Responda em 1 frase.").content
+
 # interpretando imagens
 puts "\nInterpretando uma imagem:\n"
 puts chat.ask("O que você vê nessa imagem?", with: "ai.jpg").content
