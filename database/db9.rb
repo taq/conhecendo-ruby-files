@@ -8,16 +8,16 @@ ActiveRecord::Base.establish_connection({
 
 # criando o mapeamento da classe com a tabela
 # (espera aí é só isso???)
-class Aluno < ActiveRecord::Base
-end
+class Aluno < ActiveRecord::Base; end
 
 # pegando a coleção e usando o seu iterador
-for aluno in Aluno.all
+Aluno.order(:id).each do |aluno|
   puts "id: #{aluno.id} nome: #{aluno.nome}"
 end
 
-# atualizando o nome de um aluno
+# procurando um aluno específico
 aluno = Aluno.find(3)
-puts "encontrei #{aluno.nome}"
-aluno.nome = 'Danilo'
-aluno.save
+puts "Encontrei #{aluno.nome}"
+
+# atualizando o nome de um aluno
+aluno.update(nome: 'Danilo')
