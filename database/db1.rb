@@ -1,6 +1,6 @@
 require 'sequel'
 
-Sequel.sqlite(database: 'alunos.sqlite3') do |con|
+Sequel.sqlite(database: 'curso.sqlite3') do |con|
   con.run('drop table if exists alunos')
 
   sql = <<FIM

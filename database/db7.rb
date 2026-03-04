@@ -1,7 +1,7 @@
 require 'sequel'
 require 'sqlite3'
 
-Sequel.sqlite(database: 'alunos.sqlite3') do |con|
+Sequel.sqlite(database: 'curso.sqlite3') do |con|
   ds = con[:alunos].filter(id: :$i)
   ps = ds.prepare(:select, :select_by_id)
 
