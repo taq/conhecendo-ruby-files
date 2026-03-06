@@ -1,4 +1,4 @@
 require "yaml"
 
-result = YAML::load(File.open(ARGV[0]))
+result = YAML::load_file(ARGV[0])
 p result
