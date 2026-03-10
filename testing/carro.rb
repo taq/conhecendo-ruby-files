@@ -14,4 +14,5 @@ class Carro
   end
 end
 
-Carro.new(:fiat, :pulse, :branco, 40)
+carro = Carro.new(:fiat, :pulse, :branco, 40)
+p carro
