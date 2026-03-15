@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require "minitest/mock"
+require "minitest/focus"
 require_relative "../calc"
 
 describe Calculadora do
