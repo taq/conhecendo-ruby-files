@@ -15,18 +15,18 @@ class TesteCalculadora < Test::Unit::TestCase
   end
 
   def test_raiz_quadrada
-    omit('Fugi da escola, não sei fazer isso')
+    omit 'Fugi da escola, não sei fazer isso'
     assert_true(1 == 1)
   end
 
   def test_linux
-    omit_unless('Só funciona no Linux', RUBY_PLATFORM.match?(/linux/i))
+    omit_unless 'Só funciona no Linux', RUBY_PLATFORM.match?(/linux/i)
     assert_true(Dir.exist?('/tmp'))
   end
 
   def test_tarde
-    omit_if('Só roda à tarde', Time.now.hour >= 12)
-    assert_true(Time.hour.hour >= 12)
+    omit_if 'Não roda à tarde', Time.now.hour >= 12
+    assert_true(Time.hour.hour < 12)
   end
 
   def teardown

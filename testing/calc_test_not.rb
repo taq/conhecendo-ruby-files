@@ -11,9 +11,9 @@ class TesteCalculadora < Test::Unit::TestCase
   end
 
   def test_subtracao
-    notify('Começando o teste de subtração')
+    notify 'Começando o teste de subtração'
     assert_equal(0, @calculadora.subtrai(1, 1), '1 - 1 = 0')
-    notify('Teste de subtração terminado')
+    notify 'Teste de subtração terminado'
   end
 
   def teardown

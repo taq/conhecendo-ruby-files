@@ -15,7 +15,7 @@ class TesteCalculadora < Test::Unit::TestCase
   end
 
   def test_raiz_quadrada
-    pend('Ainda não fizemos esse método')
+    pend 'Ainda não fizemos esse método'
     assert_equal(2, @calculadora.raiz_quadrada(4), '2 é raiz de 4')
   end
 
