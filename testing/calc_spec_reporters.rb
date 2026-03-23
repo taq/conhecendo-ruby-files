@@ -1,10 +1,8 @@
 require 'minitest/autorun'
+require "minitest/reporters"
 require_relative 'calc'
 
-require 'minitest/minitest_reporter_plugin'
-Minitest.register_plugin :minitest_reporter
-
-require "minitest/reporters"
+Minitest.load_plugins
 Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 
 describe Calculadora do
