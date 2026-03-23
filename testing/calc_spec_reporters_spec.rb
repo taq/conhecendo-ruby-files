@@ -5,7 +5,7 @@ require 'minitest/minitest_reporter_plugin'
 Minitest.register_plugin :minitest_reporter
 
 require "minitest/reporters"
-Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 describe Calculadora do
   before do
