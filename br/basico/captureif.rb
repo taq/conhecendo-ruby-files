@@ -9,4 +9,4 @@ else
   "menor que 10"
 end
 
-result
+puts result
