@@ -36,8 +36,8 @@ namespace :zip do
     puts stderr.read.size == 0 ? "Arquivo criado com sucesso." : "Erro criando o arquivo: #{error}"
   end
 
-  desc "Cria o arquivo rake.zip se não estiver criado"
-  file "rake.zip" do
+  desc "Cria o arquivo #{zipfile} se não estiver criado"
+  file zipfile do
     Rake::Task["zip:build"].invoke
   end
 end
