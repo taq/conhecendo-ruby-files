@@ -1,0 +1,11 @@
+# TypeProf 0.31.1
+
+# car.rb
+class Car
+  def brand: -> String
+  def model: -> String
+  def tank: -> Integer
+  def color: -> String
+  def color=: (untyped) -> String
+  def initialize: (String, String, String, Integer) -> void
+end

@@ -1,0 +1,11 @@
+# TypeProf 0.31.1
+
+# car.rb
+class Car
+  def brand: -> untyped
+  def model: -> untyped
+  def tank: -> untyped
+  def color: -> untyped
+  def color=: (untyped) -> untyped
+  def initialize: (untyped, untyped, untyped, untyped) -> void
+end
