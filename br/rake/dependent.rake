@@ -33,7 +33,7 @@ namespace :zip do
     puts "Criando o arquivo #{ZIPFILE} ..."
     list = Dir.glob(FILEMASK).sort.join(", ")
     puts "Adicionando os arquivos #{list} ..."
-    stdin, stdout, stderr = Open3.popen3("zip #{ZIPFILE} #{list}")
+    _, _, stderr = Open3.popen3("zip #{ZIPFILE} #{list}")
     error = stderr.read
     if error.size == 0
       puts "Arquivo criado com sucesso."
