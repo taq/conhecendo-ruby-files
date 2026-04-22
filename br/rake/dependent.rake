@@ -22,13 +22,13 @@ namespace :zip do
     end
   end
 
-  desc "Apaga o arquivo .zip anterior" 
+  desc "Apaga o arquivo .zip anterior"
   task :clean do
     puts "Apagando o arquivo #{ZIPFILE}, se existir ..."
-    File.delete(ZIPFILE) if File.exists?(ZIPFILE)
+    File.delete(ZIPFILE) if File.exist?(ZIPFILE)
   end
 
-  desc "Cria o arquivo .zip" 
+  desc "Cria o arquivo .zip"
   task build: :clean do
     puts "Criando o arquivo #{ZIPFILE} ..."
     list = Dir.glob(FILEMASK).sort.join(", ")

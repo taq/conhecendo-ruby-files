@@ -24,7 +24,7 @@ namespace :zip do
   desc "Apaga o arquivo .zip anterior" 
   task :clean do
     puts "Apagando o arquivo #{zipfile}, se existir ..."
-    File.delete(zipfile) if File.exists?(zipfile)
+    File.delete(zipfile) if File.exist?(zipfile)
   end
 
   desc "Cria o arquivo .zip" 
