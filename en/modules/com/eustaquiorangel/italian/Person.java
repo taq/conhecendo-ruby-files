@@ -2,7 +2,7 @@
 package com.eustaquiorangel.italian;
 
 public class Person {
-  public static String preferredFood() {
+  public static String favoriteFood() {
     return "pizza";
   }
 }

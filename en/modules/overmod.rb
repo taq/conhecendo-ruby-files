@@ -15,5 +15,5 @@ class Car
   include Radio
 end
 
-  c = Car.new
+c = Car.new
 c.turn_on

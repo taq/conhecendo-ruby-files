@@ -4,7 +4,7 @@
 
 public class Namespace {
   public static void main(String args[]) {
-    System.out.println(com.eustaquiorangel.brazilian.Person.preferredFood());
-    System.out.println(com.eustaquiorangel.italian.Person.preferredFood());
+    System.out.println(com.eustaquiorangel.brazilian.Person.favoriteFood());
+    System.out.println(com.eustaquiorangel.italian.Person.favoriteFood());
   }
 }

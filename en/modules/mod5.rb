@@ -1,6 +1,6 @@
 module Brazilian
   class Person
-    def preferred_food
+    def favorite_food
       "feijoada"
     end
   end
@@ -8,7 +8,7 @@ end
 
 module Italian
   class Person
-    def preferred_food
+    def favorite_food
       "pizza"
     end
   end
@@ -17,5 +17,5 @@ end
 person1 = Brazilian::Person.new
 person2 = Italian::Person.new
 
-puts person1.preferred_food  
-puts person2.preferred_food
+puts person1.favorite_food
+puts person2.favorite_food

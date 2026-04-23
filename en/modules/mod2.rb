@@ -1,6 +1,6 @@
 class Primate
   def eat
-    puts "Nham!"
+    puts "Nom!"
   end
 
   def sleep 
