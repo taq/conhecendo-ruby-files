@@ -1,0 +1,70 @@
+This is ftp.gnu.org, the FTP server of the the GNU project.
+
+NOTICE (Updated October 15 2021):
+
+If you maintain scripts used to access ftp.gnu.org over FTP,
+we strongly encourage you to change them to use HTTPS instead.
+
+Eventually we hope to shut down FTP protocol access, but plan
+to give notice here and other places for several months ahead
+of time.
+
+
+---
+
+Comments, suggestions, problems and complaints about the software should
+be sent to the specific package. For general website issues, contact
+sysadmin@gnu.org.
+
+gnu/		Contains GNU programs and documents that we develop for the GNU
+		system (or pointers on where to get the programs, if we don't
+		keep the files here).  These are programs that fit the
+		definition of GNU software at:
+		http://www.gnu.org/philosophy/categories.html#GNUsoftware
+
+old-gnu/	Older versions of GNU software.
+
+non-gnu/	We distribute some non-GNU programs through our FTP server, or
+		provide pointers to where they are.  We put these
+		programs/pointers in this directory since they are not
+		developed by the GNU project. They are, of course, part of
+		the GNU system. See:
+		http://www.gnu.org/philosophy/categories.html#TheGNUsystem
+
+third-party	Contains GNU software that has been modified by third
+		parties.  We don't necessarily know the specifics of
+		what these modifications do or how these modified versions
+		work.  We provide this directory as a service to GNU users
+		who might find these modifications useful.
+
+iso		Contains bootable CD images (ISO9660) of a development
+		snapshot of the Debian GNU/Hurd complete operating system.
+
+ls-lrR.txt.gz	The output of `ls -lrR' run from this directory. This can
+		be used to see what files are here. This is a gzip'ed version of the file.
+
+find.txt.gz	The output of `find .' run from this directory. This can
+		be used to see what files are here. This is a gzip'ed version of the file.
+
+tree.json.gz	The output of `tree -aJsD --timefmt %s' run from this directory
+		each time it changes.	This can be used to see what files are here. The
+		timestamp of this file can be used to see if has been any change to the
+		ftp, and the timestamp of any file to know if it has not changed. This is 
+		a gzip'ed version of the file.
+
+lpf.README	A description of where to find information on the League for
+		Programming Freedom, since this information is not kept here 
+		anymore.
+
+There are also .sig files, which contain detached GPG signatures of the above
+files, automatically signed by the same script that generates them.
+
+You can verify the signatures for gnu project files with the keyring file from:
+  https://ftp.gnu.org/gnu/gnu-keyring.gpg
+
+In a directory with the keyring file, the source file to verify and the
+signature file, the command to use is:
+
+  $ gpgv --keyring ./gnu-keyring.gpg foo.tar.xz.sig foo.tar.xz
+
+

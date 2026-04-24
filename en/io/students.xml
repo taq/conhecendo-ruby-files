@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <id>1</id>
+    <name>John</name>
+  </student>
+  <student>
+    <id>2</id>
+    <name>Joe</name>
+  </student>
+  <student>
+    <id>3</id>
+    <name>Anthony</name>
+  </student>
+  <student>
+    <id>4</id>
+    <name>Mary</name>
+  </student>
+</students>
