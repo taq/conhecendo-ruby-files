@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "minitest", "~> 5.25"
+gem "minitest-mock"
+gem "minitest-focus"
+gem "minitest-reporters"
+gem "guard"
+gem "guard-minitest"

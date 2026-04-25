@@ -1,0 +1,4 @@
+guard :minitest do
+  watch(%r{^spec/(.*)_spec\.rb$})
+  watch(%r{^(.+)\.rb$}) { "spec/#{it[1]}_spec.rb" }
+end
