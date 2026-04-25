@@ -1,12 +1,12 @@
-require 'minitest/autorun'
-require 'minitest/mock'
-require_relative 'calc'
+require "minitest/autorun"
+require "minitest/mock"
+require_relative "calc_media"
 
 describe Calculadora do
   let(:calculadora) { Calculadora.new }
 
-  describe 'média' do
-    it 'deve ser igual a 2' do
+  describe "média" do
+    it "deve ser igual a 2" do
       # esse é o mock
       colecao = Minitest::Mock.new
       colecao.expect :valores, [1, 2, 3]
