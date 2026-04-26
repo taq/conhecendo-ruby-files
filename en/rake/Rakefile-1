@@ -1,0 +1,6 @@
+desc "List file"
+task :list do
+  Dir.glob("*.txt") do |file|
+    puts "found file: #{file}"
+  end
+end

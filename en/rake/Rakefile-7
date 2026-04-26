@@ -1,0 +1,52 @@
+require "open3"
+
+task default: "files:list"
+filemask = "*.txt"
+zipfile  = "rake.zip"
+
+namespace :files do
+  desc "Lists the files to be compressed"
+  task :list do
+    Dir.glob(filemask) do |file|
+      puts "found file: #{file}"
+    end
+  end
+end
+
+namespace :zip do
+  desc "Lists the compressed files"
+  task :list do
+    Dir.glob(zipfile) do |file|
+      puts "found file: #{file}"
+    end
+  end
+
+  desc "Delete the previous .zip file"
+  task :clean do
+    puts "Deleting the #{zipfile} file, if it exists ..."
+    File.delete(zipfile) if File.exist?(zipfile)
+  end
+
+  desc "Create .zip file"
+  task build: :clean do
+    puts "Creating the #{zipfile} file ..."
+    list = Rake::FileList[filemask]
+    list.exclude(/\A[a-zA-Z]+/)
+    list = list.sort.join(", ")
+
+    puts "Adding the files #{list} ..."
+    _, _, stderr = Open3.popen3("zip #{zipfile} #{list}")
+    puts stderr.read.size == 0 ? "File create succcesfully." : "Error creating file: #{error}"
+  end
+
+  desc "Create #{zipfile} file if not found"
+  file zipfile do
+    Rake::Task["zip:build"].invoke
+  end
+
+  desc "Create file"
+  rule ".zip" do |file|
+    zipfile = file.name
+    Rake::Task["zip:build"].invoke
+  end
+end

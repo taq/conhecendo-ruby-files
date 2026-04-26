@@ -1,0 +1,19 @@
+task default: "files:list"
+
+namespace :files do
+  desc "Lists the files to be compressed"
+  task :list do
+    Dir.glob("*.txt") do |file|
+      puts "found file: #{file}"
+    end
+  end
+end
+
+namespace :zip do
+  desc "Lists the compressed files"
+  task :list do
+    Dir.glob("*.zip") do |file|
+      puts "found file: #{file}"
+    end
+  end
+end
