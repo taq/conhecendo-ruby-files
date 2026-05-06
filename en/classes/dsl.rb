@@ -24,9 +24,9 @@ module Configurator
   class << self
     attr_accessor :object
 
-    def config(object, &bloco)
+    def config(object, &block)
       self.object = object
-      instance_eval(&bloco)
+      instance_eval(&block)
 
       self.object
     end
